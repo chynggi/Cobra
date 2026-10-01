@@ -1,0 +1,659 @@
+{
+  "impl": "app_optimized",
+  "args": {
+    "impl": "app_optimized",
+    "repeats": 3,
+    "cases": "line_ex0,line_ex2,shadow_ex0,shadow_ex2",
+    "top_k": 3,
+    "steps": 10,
+    "steps_sweep": true,
+    "postprocess_scale": 1.5,
+    "no_postprocess": false,
+    "no_profile": false,
+    "no_release_cache": false,
+    "tag": null
+  },
+  "model_load_s": 21.368173300004855,
+  "after_load_mem": {
+    "alloc_mb": 3592.1240234375,
+    "reserved_mb": 3890.0,
+    "peak_alloc_mb": 3592.1240234375,
+    "peak_reserved_mb": 3890.0
+  },
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "torch": "2.5.1+cu124",
+  "cases": {
+    "shadow_ex0": {
+      "style": "line + shadow",
+      "seed": 1,
+      "top_k": 3,
+      "line_extraction_ms": 358.2358999992721,
+      "resolution": [
+        672,
+        960
+      ],
+      "hints": [
+        [
+          [
+            336,
+            288
+          ],
+          [
+            248,
+            233,
+            214
+          ]
+        ],
+        [
+          [
+            302,
+            672
+          ],
+          [
+            235,
+            134,
+            45
+          ]
+        ]
+      ],
+      "first_run_ms": 14519.856599996274,
+      "e2e_total_ms": 14062.016899995797,
+      "e2e_runs_ms": [
+        14062.016899995797,
+        14026.076799993461,
+        14091.262599999027
+      ],
+      "e2e_mem": {
+        "alloc_mb": 3600.40380859375,
+        "reserved_mb": 10698.0,
+        "peak_alloc_mb": 8215.06005859375,
+        "peak_reserved_mb": 10698.0
+      },
+      "e2e_wddm": [
+        {
+          "dedicated_max_mb": 10826.9296875,
+          "nonlocal_max_mb": 78.0
+        },
+        {
+          "dedicated_max_mb": 10826.9296875,
+          "nonlocal_max_mb": 78.0
+        },
+        {
+          "dedicated_max_mb": 10826.9296875,
+          "nonlocal_max_mb": 78.0
+        }
+      ],
+      "output_size": [
+        1008,
+        1440
+      ],
+      "stages": {
+        "retrieval.prep": {
+          "wall_ms": 71.62650000100257,
+          "gpu_ms": 71.46185302734375,
+          "peak_alloc_mb": 3600.40380859375
+        },
+        "retrieval.clip": {
+          "wall_ms": 611.1252999980934,
+          "gpu_ms": 610.9407958984375,
+          "peak_alloc_mb": 3756.73974609375
+        },
+        "retrieval.select": {
+          "wall_ms": 51.28339999646414,
+          "gpu_ms": 51.147071838378906,
+          "peak_alloc_mb": 3606.6630859375
+        },
+        "diffusion": {
+          "wall_ms": 9566.202599999087,
+          "gpu_ms": 9566.037109375,
+          "peak_alloc_mb": 6475.5732421875
+        },
+        "release_cache": {
+          "wall_ms": 35.83140000409912,
+          "gpu_ms": 35.618656158447266,
+          "peak_alloc_mb": 3606.193359375
+        },
+        "A.resize": {
+          "wall_ms": 24.166100003640167,
+          "gpu_ms": 23.851295471191406,
+          "peak_alloc_mb": 3606.193359375
+        },
+        "B.test_low_color": {
+          "wall_ms": 8.134800002153497,
+          "gpu_ms": 7.938111782073975,
+          "peak_alloc_mb": 3635.26318359375
+        },
+        "C.query_image_vae_": {
+          "wall_ms": 31.346199997642543,
+          "gpu_ms": 31.15305519104004,
+          "peak_alloc_mb": 3643.56884765625
+        },
+        "E.vae_encode_bw": {
+          "wall_ms": 418.73669999768026,
+          "gpu_ms": 418.5487365722656,
+          "peak_alloc_mb": 5750.3046875
+        },
+        "D.vae_encode_color": {
+          "wall_ms": 521.0547000024235,
+          "gpu_ms": 520.7950439453125,
+          "peak_alloc_mb": 6274.16015625
+        },
+        "F.concat": {
+          "wall_ms": 11.048000000300817,
+          "gpu_ms": 10.924032211303711,
+          "peak_alloc_mb": 5733.908203125
+        },
+        "G.multires": {
+          "wall_ms": 1736.993500002427,
+          "gpu_ms": 1736.806396484375,
+          "peak_alloc_mb": 8215.06005859375
+        },
+        "H.vae_decode": {
+          "wall_ms": 981.2982000003103,
+          "gpu_ms": 981.106201171875,
+          "peak_alloc_mb": 7683.6708984375
+        },
+        "I.to_pil": {
+          "wall_ms": 28.676000001723878,
+          "gpu_ms": 28.439231872558594,
+          "peak_alloc_mb": 3640.2822265625
+        },
+        "_total": {
+          "wall_ms": 14161.917299999914
+        },
+        "_peak": {
+          "alloc_mb": 8215.06005859375,
+          "reserved_mb": 10698.0
+        }
+      },
+      "steps_sweep": {
+        "5": {
+          "diffusion_ms": 5964.354699997784,
+          "full_ms": 10530.116600002657
+        },
+        "8": {
+          "diffusion_ms": 8133.377600002859,
+          "full_ms": 12700.212499999907
+        },
+        "10": {
+          "diffusion_ms": 9551.656949999597,
+          "full_ms": 14115.515399997093
+        },
+        "12": {
+          "diffusion_ms": 11020.99520000047,
+          "full_ms": 15568.975300000602
+        },
+        "15": {
+          "diffusion_ms": 13155.823450000753,
+          "full_ms": 17705.297900000005
+        }
+      }
+    },
+    "shadow_ex2": {
+      "style": "line + shadow",
+      "seed": 4,
+      "top_k": 3,
+      "line_extraction_ms": 303.0715999993845,
+      "resolution": [
+        800,
+        800
+      ],
+      "hints": [
+        [
+          [
+            400,
+            280
+          ],
+          [
+            250,
+            204,
+            159
+          ]
+        ],
+        [
+          [
+            320,
+            560
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ]
+      ],
+      "first_run_ms": 13531.344400005764,
+      "e2e_total_ms": 13557.493799999065,
+      "e2e_runs_ms": [
+        13521.45069999824,
+        13557.493799999065,
+        13606.065499996475
+      ],
+      "e2e_mem": {
+        "alloc_mb": 3600.40283203125,
+        "reserved_mb": 10356.0,
+        "peak_alloc_mb": 8178.05419921875,
+        "peak_reserved_mb": 10356.0
+      },
+      "e2e_wddm": [
+        {
+          "dedicated_max_mb": 10484.92578125,
+          "nonlocal_max_mb": 78.0
+        },
+        {
+          "dedicated_max_mb": 10484.92578125,
+          "nonlocal_max_mb": 78.0
+        },
+        {
+          "dedicated_max_mb": 10484.92578125,
+          "nonlocal_max_mb": 78.0
+        }
+      ],
+      "output_size": [
+        1200,
+        1200
+      ],
+      "stages": {
+        "retrieval.prep": {
+          "wall_ms": 14.900399997713976,
+          "gpu_ms": 14.734304428100586,
+          "peak_alloc_mb": 3600.40283203125
+        },
+        "retrieval.clip": {
+          "wall_ms": 205.44610000069952,
+          "gpu_ms": 205.15782165527344,
+          "peak_alloc_mb": 3639.55712890625
+        },
+        "retrieval.select": {
+          "wall_ms": 68.03650000074413,
+          "gpu_ms": 67.86860656738281,
+          "peak_alloc_mb": 3602.0390625
+        },
+        "diffusion": {
+          "wall_ms": 9515.254300000379,
+          "gpu_ms": 9515.0908203125,
+          "peak_alloc_mb": 6445.904296875
+        },
+        "release_cache": {
+          "wall_ms": 35.46910000295611,
+          "gpu_ms": 35.222015380859375,
+          "peak_alloc_mb": 3601.9208984375
+        },
+        "A.resize": {
+          "wall_ms": 23.136200004955754,
+          "gpu_ms": 22.971328735351562,
+          "peak_alloc_mb": 3601.9208984375
+        },
+        "B.test_low_color": {
+          "wall_ms": 7.255899996380322,
+          "gpu_ms": 7.112095832824707,
+          "peak_alloc_mb": 3630.76025390625
+        },
+        "C.query_image_vae_": {
+          "wall_ms": 26.008000000729226,
+          "gpu_ms": 25.79267120361328,
+          "peak_alloc_mb": 3639.0
+        },
+        "E.vae_encode_bw": {
+          "wall_ms": 419.83759999857284,
+          "gpu_ms": 419.63690185546875,
+          "peak_alloc_mb": 5729.962890625
+        },
+        "D.vae_encode_color": {
+          "wall_ms": 513.0544999992708,
+          "gpu_ms": 512.8632202148438,
+          "peak_alloc_mb": 6249.50439453125
+        },
+        "F.concat": {
+          "wall_ms": 11.09580000047572,
+          "gpu_ms": 10.924863815307617,
+          "peak_alloc_mb": 5714.49169921875
+        },
+        "G.multires": {
+          "wall_ms": 1720.284899995022,
+          "gpu_ms": 1719.7860107421875,
+          "peak_alloc_mb": 8178.05419921875
+        },
+        "H.vae_decode": {
+          "wall_ms": 967.3196000003372,
+          "gpu_ms": 967.0498657226562,
+          "peak_alloc_mb": 7649.4208984375
+        },
+        "I.to_pil": {
+          "wall_ms": 28.77520000038203,
+          "gpu_ms": 28.589759826660156,
+          "peak_alloc_mb": 3635.7392578125
+        },
+        "_total": {
+          "wall_ms": 13591.472300002351
+        },
+        "_peak": {
+          "alloc_mb": 8178.05419921875,
+          "reserved_mb": 10356.0
+        }
+      }
+    },
+    "line_ex0": {
+      "style": "line",
+      "seed": 0,
+      "top_k": 3,
+      "change_ckpt_s": 0.8387883000032161,
+      "line_extraction_ms": 306.6984000033699,
+      "resolution": [
+        672,
+        960
+      ],
+      "hints": [
+        [
+          [
+            336,
+            288
+          ],
+          [
+            215,
+            186,
+            149
+          ]
+        ],
+        [
+          [
+            268,
+            624
+          ],
+          [
+            182,
+            169,
+            133
+          ]
+        ],
+        [
+          [
+            416,
+            144
+          ],
+          [
+            75,
+            109,
+            80
+          ]
+        ]
+      ],
+      "first_run_ms": 13899.315700000443,
+      "e2e_total_ms": 13895.590500003891,
+      "e2e_runs_ms": [
+        13918.665500001225,
+        13895.590500003891,
+        13885.465999999724
+      ],
+      "e2e_mem": {
+        "alloc_mb": 3600.43505859375,
+        "reserved_mb": 10696.0,
+        "peak_alloc_mb": 8213.64599609375,
+        "peak_reserved_mb": 10696.0
+      },
+      "e2e_wddm": [
+        {
+          "dedicated_max_mb": 10824.9296875,
+          "nonlocal_max_mb": 78.0
+        },
+        {
+          "dedicated_max_mb": 10824.9296875,
+          "nonlocal_max_mb": 78.0
+        },
+        {
+          "dedicated_max_mb": 10824.9296875,
+          "nonlocal_max_mb": 78.0
+        }
+      ],
+      "output_size": [
+        1008,
+        1440
+      ],
+      "stages": {
+        "retrieval.prep": {
+          "wall_ms": 55.91650000133086,
+          "gpu_ms": 55.75302505493164,
+          "peak_alloc_mb": 3600.43505859375
+        },
+        "retrieval.clip": {
+          "wall_ms": 500.04679999983637,
+          "gpu_ms": 499.85174560546875,
+          "peak_alloc_mb": 3717.68896484375
+        },
+        "retrieval.select": {
+          "wall_ms": 50.687099996139295,
+          "gpu_ms": 50.2716178894043,
+          "peak_alloc_mb": 3605.1318359375
+        },
+        "diffusion": {
+          "wall_ms": 9529.814399997122,
+          "gpu_ms": 9529.5732421875,
+          "peak_alloc_mb": 6473.53125
+        },
+        "release_cache": {
+          "wall_ms": 38.34709999500774,
+          "gpu_ms": 38.10620880126953,
+          "peak_alloc_mb": 3604.779296875
+        },
+        "A.resize": {
+          "wall_ms": 23.914999997941777,
+          "gpu_ms": 23.74323272705078,
+          "peak_alloc_mb": 3604.779296875
+        },
+        "B.test_low_color": {
+          "wall_ms": 8.386599998630118,
+          "gpu_ms": 8.246368408203125,
+          "peak_alloc_mb": 3633.84912109375
+        },
+        "C.query_image_vae_": {
+          "wall_ms": 33.33800000109477,
+          "gpu_ms": 33.11280059814453,
+          "peak_alloc_mb": 3642.15478515625
+        },
+        "E.vae_encode_bw": {
+          "wall_ms": 419.1902000020491,
+          "gpu_ms": 418.9027099609375,
+          "peak_alloc_mb": 5748.890625
+        },
+        "D.vae_encode_color": {
+          "wall_ms": 519.5737999965786,
+          "gpu_ms": 519.3646240234375,
+          "peak_alloc_mb": 6272.74609375
+        },
+        "F.concat": {
+          "wall_ms": 11.028699998860247,
+          "gpu_ms": 10.740544319152832,
+          "peak_alloc_mb": 5732.494140625
+        },
+        "G.multires": {
+          "wall_ms": 1736.8359999964014,
+          "gpu_ms": 1736.6302490234375,
+          "peak_alloc_mb": 8213.64599609375
+        },
+        "H.vae_decode": {
+          "wall_ms": 978.5577000002377,
+          "gpu_ms": 978.3674926757812,
+          "peak_alloc_mb": 7682.2568359375
+        },
+        "I.to_pil": {
+          "wall_ms": 29.21029999561142,
+          "gpu_ms": 28.803552627563477,
+          "peak_alloc_mb": 3638.8681640625
+        },
+        "_total": {
+          "wall_ms": 13975.192899997637
+        },
+        "_peak": {
+          "alloc_mb": 8213.64599609375,
+          "reserved_mb": 10696.0
+        }
+      },
+      "steps_sweep": {
+        "5": {
+          "diffusion_ms": 5938.049200001842,
+          "full_ms": 10348.734350001905
+        },
+        "8": {
+          "diffusion_ms": 8119.685199999367,
+          "full_ms": 12540.27275000044
+        },
+        "10": {
+          "diffusion_ms": 9538.53975000311,
+          "full_ms": 13937.39380000261
+        },
+        "12": {
+          "diffusion_ms": 10993.49340000117,
+          "full_ms": 15373.109699998167
+        },
+        "15": {
+          "diffusion_ms": 13144.12285000435,
+          "full_ms": 17546.599100001913
+        }
+      }
+    },
+    "line_ex2": {
+      "style": "line",
+      "seed": 1,
+      "top_k": 3,
+      "line_extraction_ms": 288.78899999835994,
+      "resolution": [
+        672,
+        960
+      ],
+      "hints": [
+        [
+          [
+            336,
+            288
+          ],
+          [
+            248,
+            233,
+            214
+          ]
+        ],
+        [
+          [
+            302,
+            672
+          ],
+          [
+            235,
+            134,
+            45
+          ]
+        ]
+      ],
+      "first_run_ms": 14071.840299999167,
+      "e2e_total_ms": 14104.95620000438,
+      "e2e_runs_ms": [
+        14104.95620000438,
+        14094.671499995457,
+        14105.832599998394
+      ],
+      "e2e_mem": {
+        "alloc_mb": 3600.43505859375,
+        "reserved_mb": 10696.0,
+        "peak_alloc_mb": 8215.84912109375,
+        "peak_reserved_mb": 10696.0
+      },
+      "e2e_wddm": [
+        {
+          "dedicated_max_mb": 10824.9296875,
+          "nonlocal_max_mb": 78.0
+        },
+        {
+          "dedicated_max_mb": 10824.9296875,
+          "nonlocal_max_mb": 78.0
+        },
+        {
+          "dedicated_max_mb": 10824.9296875,
+          "nonlocal_max_mb": 78.0
+        }
+      ],
+      "output_size": [
+        1008,
+        1440
+      ],
+      "stages": {
+        "retrieval.prep": {
+          "wall_ms": 69.93579999834765,
+          "gpu_ms": 69.71984100341797,
+          "peak_alloc_mb": 3600.43505859375
+        },
+        "retrieval.clip": {
+          "wall_ms": 604.9093999972683,
+          "gpu_ms": 604.7076416015625,
+          "peak_alloc_mb": 3757.52880859375
+        },
+        "retrieval.select": {
+          "wall_ms": 48.57810000248719,
+          "gpu_ms": 48.33369445800781,
+          "peak_alloc_mb": 3607.4521484375
+        },
+        "diffusion": {
+          "wall_ms": 9558.302899997216,
+          "gpu_ms": 9558.05859375,
+          "peak_alloc_mb": 6475.734375
+        },
+        "release_cache": {
+          "wall_ms": 42.109699999855366,
+          "gpu_ms": 41.84684753417969,
+          "peak_alloc_mb": 3606.982421875
+        },
+        "A.resize": {
+          "wall_ms": 25.364400004036725,
+          "gpu_ms": 25.102336883544922,
+          "peak_alloc_mb": 3606.982421875
+        },
+        "B.test_low_color": {
+          "wall_ms": 8.932799995818641,
+          "gpu_ms": 8.67625617980957,
+          "peak_alloc_mb": 3636.05224609375
+        },
+        "C.query_image_vae_": {
+          "wall_ms": 34.77269999712007,
+          "gpu_ms": 34.48310470581055,
+          "peak_alloc_mb": 3644.35791015625
+        },
+        "E.vae_encode_bw": {
+          "wall_ms": 419.4933000035235,
+          "gpu_ms": 419.3044128417969,
+          "peak_alloc_mb": 5751.09375
+        },
+        "D.vae_encode_color": {
+          "wall_ms": 517.7258000039728,
+          "gpu_ms": 517.5255126953125,
+          "peak_alloc_mb": 6274.94921875
+        },
+        "F.concat": {
+          "wall_ms": 11.165000003529713,
+          "gpu_ms": 10.975232124328613,
+          "peak_alloc_mb": 5734.697265625
+        },
+        "G.multires": {
+          "wall_ms": 1737.4621999988449,
+          "gpu_ms": 1737.2528076171875,
+          "peak_alloc_mb": 8215.84912109375
+        },
+        "H.vae_decode": {
+          "wall_ms": 976.2076000042725,
+          "gpu_ms": 976.026611328125,
+          "peak_alloc_mb": 7684.4599609375
+        },
+        "I.to_pil": {
+          "wall_ms": 28.75810000114143,
+          "gpu_ms": 28.56822395324707,
+          "peak_alloc_mb": 3641.0712890625
+        },
+        "_total": {
+          "wall_ms": 14140.406900005473
+        },
+        "_peak": {
+          "alloc_mb": 8215.84912109375,
+          "reserved_mb": 10696.0
+        }
+      }
+    }
+  }
+}

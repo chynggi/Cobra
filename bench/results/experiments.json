@@ -1,0 +1,772 @@
+{
+  "shadow_ex0": {
+    "postprocess_ablation": {
+      "0 official": {
+        "ms": 13064.869300000282,
+        "runs": [
+          13101.2,
+          13028.5
+        ],
+        "peak_alloc_mb": 11586.59228515625,
+        "peak_reserved_mb": 13312.0,
+        "dedicated_max_mb": 11462.828125,
+        "nonlocal_max_mb": 2062.0
+      },
+      "1 +skip bw mid-block, GPU convert, decode frees skips": {
+        "ms": 4492.626700000983,
+        "runs": [
+          4481.6,
+          4503.6
+        ],
+        "peak_alloc_mb": 10018.55078125,
+        "peak_reserved_mb": 11908.0,
+        "dedicated_max_mb": 11400.19140625,
+        "nonlocal_max_mb": 718.0,
+        "psnr": Infinity,
+        "max_abs_diff": 0,
+        "pct_px_diff": 0.0
+      },
+      "2 +BN fused, in-place ReLU, inputs released": {
+        "ms": 4133.795099998679,
+        "runs": [
+          4155.8,
+          4111.7
+        ],
+        "peak_alloc_mb": 10186.541015625,
+        "peak_reserved_mb": 11558.0,
+        "dedicated_max_mb": 11433.43359375,
+        "nonlocal_max_mb": 334.0,
+        "psnr": 36.24267899495786,
+        "max_abs_diff": 63,
+        "pct_px_diff": 99.33325066137566
+      },
+      "3 +level-0 strips": {
+        "ms": 9912.56495000016,
+        "runs": [
+          9864.1,
+          9961.0
+        ],
+        "peak_alloc_mb": 9655.15185546875,
+        "peak_reserved_mb": 12232.0,
+        "dedicated_max_mb": 11404.81640625,
+        "nonlocal_max_mb": 1038.0,
+        "psnr": 36.24267899495786,
+        "max_abs_diff": 63,
+        "pct_px_diff": 99.33325066137566
+      },
+      "4 +CLIP fp16 (frees 1.2 GB)": {
+        "ms": 11113.739250000435,
+        "runs": [
+          11062.6,
+          11164.9
+        ],
+        "peak_alloc_mb": 8401.91259765625,
+        "peak_reserved_mb": 11490.0,
+        "dedicated_max_mb": 10407.3203125,
+        "nonlocal_max_mb": 1294.0,
+        "psnr": 36.24267899495786,
+        "max_abs_diff": 63,
+        "pct_px_diff": 99.33325066137566
+      },
+      "5 CLIP offloaded to CPU during post-processing": {
+        "ms": 12364.88719999943,
+        "runs": [
+          12384.2,
+          12345.6
+        ],
+        "peak_alloc_mb": 7179.8798828125,
+        "peak_reserved_mb": 11046.0,
+        "dedicated_max_mb": 10921.4453125,
+        "nonlocal_max_mb": 398.0,
+        "psnr": 36.24267899495786,
+        "max_abs_diff": 63,
+        "pct_px_diff": 99.33325066137566
+      },
+      "3b level-0 strips + line-art feature cache hit": {
+        "ms": 9592.724800002543,
+        "runs": [
+          9497.9,
+          9687.6
+        ],
+        "peak_alloc_mb": 9590.89794921875,
+        "peak_reserved_mb": 12598.0,
+        "dedicated_max_mb": 11579.20703125,
+        "nonlocal_max_mb": 1230.0
+      },
+      "3c +cudnn.benchmark": {
+        "ms": 10303.894949998721,
+        "runs": [
+          10306.5,
+          10301.3
+        ],
+        "peak_alloc_mb": 9590.89794921875,
+        "peak_reserved_mb": 12598.0,
+        "dedicated_max_mb": 11579.20703125,
+        "nonlocal_max_mb": 1230.0
+      },
+      "3d +channels_last MultiResNet": {
+        "ms": 12343.702800000756,
+        "runs": [
+          12329.9,
+          12357.5
+        ],
+        "peak_alloc_mb": 9761.06591796875,
+        "peak_reserved_mb": 13048.0,
+        "dedicated_max_mb": 11524.19921875,
+        "nonlocal_max_mb": 1736.0
+      },
+      "3e + empty_cache after each run": {
+        "ms": 11392.249999998967,
+        "runs": [
+          12279.5,
+          10505.0
+        ],
+        "peak_alloc_mb": 9590.89794921875,
+        "peak_reserved_mb": 12598.0,
+        "dedicated_max_mb": 11543.27734375,
+        "nonlocal_max_mb": 1266.0
+      },
+      "empty_cache call (warm, nothing cached) ms": 0.01639999754843302,
+      "6 bf16 VAE + MultiResNet": {
+        "ms": 12878.956849997849,
+        "runs": [
+          12904.5,
+          12853.4
+        ],
+        "peak_alloc_mb": 9761.06591796875,
+        "peak_reserved_mb": 14248.0,
+        "dedicated_max_mb": 11510.59765625,
+        "nonlocal_max_mb": 2958.0,
+        "psnr": 36.149519925511775,
+        "max_abs_diff": 64,
+        "pct_px_diff": 99.2771026234568,
+        "psnr_vs_fp16_optimized": 54.330401122507496
+      },
+      "7 +vae.enable_slicing()": {
+        "ms": 11259.748649999892,
+        "runs": [
+          11271.2,
+          11248.3
+        ],
+        "peak_alloc_mb": 9590.14794921875,
+        "peak_reserved_mb": 12600.0,
+        "dedicated_max_mb": 11523.33203125,
+        "nonlocal_max_mb": 1294.0,
+        "psnr": 57.853531857224795,
+        "max_abs_diff": 2,
+        "pct_px_diff": 28.313629850088184
+      },
+      "8 official + vae.enable_tiling()": {
+        "ms": 5563.570099999197,
+        "runs": [
+          5563.6
+        ],
+        "peak_alloc_mb": 10670.5771484375,
+        "peak_reserved_mb": 11466.0,
+        "dedicated_max_mb": 11541.07421875,
+        "nonlocal_max_mb": 142.0,
+        "psnr": 22.05592373489874,
+        "max_abs_diff": 254,
+        "pct_px_diff": 99.98670359347443
+      }
+    },
+    "scales": {
+      "1.5": {
+        "official": null,
+        "optimized": {
+          "ms": 11597.750299999461,
+          "runs": [
+            11615.0,
+            11580.5
+          ],
+          "peak_alloc_mb": 9590.14794921875,
+          "peak_reserved_mb": 12600.0,
+          "dedicated_max_mb": 11525.33203125,
+          "nonlocal_max_mb": 1294.0
+        },
+        "output_size": [
+          1008,
+          1440
+        ],
+        "psnr_vs_official15": 36.19024670856336,
+        "deltaE_vs_official15_at_1x": 2.265944266120487,
+        "sharpness_at_1x": 2020.060978401157,
+        "hint_err": [
+          195.40039245035047,
+          65.0811071401816
+        ],
+        "line_darkness": 46.63609482746895
+      },
+      "1.25": {
+        "official": {
+          "ms": 2659.315550001338,
+          "runs": [
+            2665.2,
+            2653.4
+          ],
+          "peak_alloc_mb": 9642.078125,
+          "peak_reserved_mb": 10590.0,
+          "dedicated_max_mb": 10728.94140625,
+          "nonlocal_max_mb": 78.0
+        },
+        "optimized": {
+          "ms": 2507.1138000002975,
+          "runs": [
+            2509.0,
+            2505.2
+          ],
+          "peak_alloc_mb": 8182.6748046875,
+          "peak_reserved_mb": 10486.0,
+          "dedicated_max_mb": 10624.94140625,
+          "nonlocal_max_mb": 78.0
+        },
+        "output_size": [
+          840,
+          1200
+        ],
+        "psnr_vs_official15": 33.8743435691275,
+        "deltaE_vs_official15_at_1x": 2.610354031186312,
+        "sharpness_at_1x": 2130.019319902499,
+        "hint_err": [
+          196.02918703394516,
+          65.135831609401
+        ],
+        "line_darkness": 46.60182255892714
+      },
+      "1.0": {
+        "official": {
+          "ms": 1652.6426000000356,
+          "runs": [
+            1652.9,
+            1652.4
+          ],
+          "peak_alloc_mb": 7968.52197265625,
+          "peak_reserved_mb": 8724.0,
+          "dedicated_max_mb": 8862.9296875,
+          "nonlocal_max_mb": 78.0
+        },
+        "optimized": {
+          "ms": 1571.6607999984262,
+          "runs": [
+            1573.2,
+            1570.2
+          ],
+          "peak_alloc_mb": 7034.0703125,
+          "peak_reserved_mb": 8670.0,
+          "dedicated_max_mb": 8808.92578125,
+          "nonlocal_max_mb": 78.0
+        },
+        "output_size": [
+          672,
+          960
+        ],
+        "psnr_vs_official15": 32.32694155839053,
+        "deltaE_vs_official15_at_1x": 3.659640807822115,
+        "sharpness_at_1x": 3593.2948024660336,
+        "hint_err": [
+          194.92012125025187,
+          65.3663520417657
+        ],
+        "line_darkness": 45.950856194660176
+      },
+      "0.875": {
+        "official": null,
+        "optimized": {
+          "ms": 1216.7824500011193,
+          "runs": [
+            1213.2,
+            1220.3
+          ],
+          "peak_alloc_mb": 6743.78857421875,
+          "peak_reserved_mb": 7236.0,
+          "dedicated_max_mb": 7374.9140625,
+          "nonlocal_max_mb": 78.0
+        },
+        "output_size": [
+          592,
+          840
+        ],
+        "psnr_vs_official15": 30.256066283729414,
+        "deltaE_vs_official15_at_1x": 3.4819291378089576,
+        "sharpness_at_1x": 1821.0246059363874,
+        "hint_err": [
+          194.55927167812604,
+          65.64672608183649
+        ],
+        "line_darkness": 46.90277600206738
+      },
+      "no_postprocess": {
+        "output_size": [
+          672,
+          960
+        ],
+        "psnr_vs_official15": 26.0708719309982,
+        "deltaE_vs_official15_at_1x": 3.9732965004354126,
+        "sharpness_at_1x": 3697.3455866067493,
+        "hint_err": [
+          197.0606228647984,
+          66.97988692193498
+        ],
+        "line_darkness": 46.99376249608966
+      },
+      "official_1.5": {
+        "sharpness_at_1x": 1748.9971253873266,
+        "hint_err": [
+          197.83143534254708,
+          67.37627753637183
+        ],
+        "line_darkness": 45.21634590536295
+      }
+    },
+    "retrieval": {
+      "n_query": 4,
+      "n_ref_patches": 20,
+      "clip_preprocess_ms": 177.7733500002796,
+      "topk_equals_argsort": true,
+      "official_pipeline_topk": [
+        [
+          11,
+          10,
+          12
+        ],
+        [
+          12,
+          11,
+          10
+        ],
+        [
+          3,
+          10,
+          9
+        ],
+        [
+          13,
+          3,
+          14
+        ]
+      ],
+      "fp32": {
+        "ms": 1410.8053500003734
+      },
+      "fp16": {
+        "ms": 455.22239999991143,
+        "topk_identical": true,
+        "topk_same_set": true,
+        "full_ranking_identical": true,
+        "max_abs_sim_diff": 0.0022794008255004883
+      },
+      "bf16": {
+        "ms": 453.93650000005437,
+        "topk_identical": true,
+        "topk_same_set": true,
+        "full_ranking_identical": false,
+        "max_abs_sim_diff": 0.00590968132019043
+      },
+      "fp16_gpu_to_cpu_ms": 401.6005000012228,
+      "fp16_cpu_to_gpu_ms": 198.24920000246493
+    },
+    "line_extraction": {
+      "fp32_ms": 298.4558999996807,
+      "fp16": {
+        "ms": 163.2486999988032,
+        "psnr": 20.999972750382213,
+        "max_abs_diff": 83,
+        "pct_px_diff": 100.0
+      },
+      "bf16": {
+        "ms": 162.26210000058927,
+        "psnr": 20.836987596003755,
+        "max_abs_diff": 86,
+        "pct_px_diff": 100.0
+      }
+    }
+  },
+  "line_ex0": {
+    "postprocess_ablation": {
+      "0 official": {
+        "ms": 18562.922549999712,
+        "runs": [
+          18556.4,
+          18569.5
+        ],
+        "peak_alloc_mb": 11540.13427734375,
+        "peak_reserved_mb": 12852.0,
+        "dedicated_max_mb": 11394.0859375,
+        "nonlocal_max_mb": 1678.0
+      },
+      "1 +skip bw mid-block, GPU convert, decode frees skips": {
+        "ms": 5193.210049999834,
+        "runs": [
+          5213.2,
+          5173.3
+        ],
+        "peak_alloc_mb": 9971.7734375,
+        "peak_reserved_mb": 11432.0,
+        "dedicated_max_mb": 11379.32421875,
+        "nonlocal_max_mb": 270.0,
+        "psnr": Infinity,
+        "max_abs_diff": 0,
+        "pct_px_diff": 0.0
+      },
+      "2 +BN fused, in-place ReLU, inputs released": {
+        "ms": 5503.495599999951,
+        "runs": [
+          5459.0,
+          5548.0
+        ],
+        "peak_alloc_mb": 10145.4248046875,
+        "peak_reserved_mb": 11432.0,
+        "dedicated_max_mb": 11379.32421875,
+        "nonlocal_max_mb": 270.0,
+        "psnr": 36.15163774180343,
+        "max_abs_diff": 65,
+        "pct_px_diff": 99.78505291005291
+      },
+      "3 +level-0 strips": {
+        "ms": 9160.60115000073,
+        "runs": [
+          9162.0,
+          9159.2
+        ],
+        "peak_alloc_mb": 9614.03564453125,
+        "peak_reserved_mb": 12106.0,
+        "dedicated_max_mb": 11414.58203125,
+        "nonlocal_max_mb": 910.0,
+        "psnr": 36.15163774180343,
+        "max_abs_diff": 65,
+        "pct_px_diff": 99.78505291005291
+      },
+      "4 +CLIP fp16 (frees 1.2 GB)": {
+        "ms": 3638.7810000014724,
+        "runs": [
+          3641.4,
+          3636.2
+        ],
+        "peak_alloc_mb": 8411.04541015625,
+        "peak_reserved_mb": 11396.0,
+        "dedicated_max_mb": 11407.19921875,
+        "nonlocal_max_mb": 206.0,
+        "psnr": 36.15163774180343,
+        "max_abs_diff": 65,
+        "pct_px_diff": 99.78505291005291
+      },
+      "5 CLIP offloaded to CPU during post-processing": {
+        "ms": 3628.1846500005486,
+        "runs": [
+          3635.9,
+          3620.5
+        ],
+        "peak_alloc_mb": 7201.3134765625,
+        "peak_reserved_mb": 10938.0,
+        "dedicated_max_mb": 11076.9453125,
+        "nonlocal_max_mb": 78.0,
+        "psnr": 36.15163774180343,
+        "max_abs_diff": 65,
+        "pct_px_diff": 99.78505291005291
+      },
+      "3b level-0 strips + line-art feature cache hit": {
+        "ms": 11151.489299998502,
+        "runs": [
+          11123.6,
+          11179.4
+        ],
+        "peak_alloc_mb": 9614.03564453125,
+        "peak_reserved_mb": 12486.0,
+        "dedicated_max_mb": 11411.33203125,
+        "nonlocal_max_mb": 1294.0
+      },
+      "3c +cudnn.benchmark": {
+        "ms": 9400.785199999518,
+        "runs": [
+          9411.6,
+          9389.9
+        ],
+        "peak_alloc_mb": 9614.63427734375,
+        "peak_reserved_mb": 12486.0,
+        "dedicated_max_mb": 11411.33203125,
+        "nonlocal_max_mb": 1294.0
+      },
+      "3d +channels_last MultiResNet": {
+        "ms": 12441.274549999434,
+        "runs": [
+          12365.6,
+          12517.0
+        ],
+        "peak_alloc_mb": 9782.35498046875,
+        "peak_reserved_mb": 13068.0,
+        "dedicated_max_mb": 11424.44921875,
+        "nonlocal_max_mb": 1864.0
+      },
+      "3e + empty_cache after each run": {
+        "ms": 10933.213349999278,
+        "runs": [
+          10521.8,
+          11344.7
+        ],
+        "peak_alloc_mb": 9614.03564453125,
+        "peak_reserved_mb": 12486.0,
+        "dedicated_max_mb": 11411.33203125,
+        "nonlocal_max_mb": 1294.0
+      },
+      "empty_cache call (warm, nothing cached) ms": 0.017499998648418114,
+      "6 bf16 VAE + MultiResNet": {
+        "ms": 12940.682849999575,
+        "runs": [
+          12854.1,
+          13027.3
+        ],
+        "peak_alloc_mb": 9783.45361328125,
+        "peak_reserved_mb": 14260.0,
+        "dedicated_max_mb": 11396.84765625,
+        "nonlocal_max_mb": 3086.0,
+        "psnr": 35.82225925684328,
+        "max_abs_diff": 67,
+        "pct_px_diff": 99.85325727513228,
+        "psnr_vs_fp16_optimized": 52.44448433525272
+      },
+      "7 +vae.enable_slicing()": {
+        "ms": 11861.89099999865,
+        "runs": [
+          11953.8,
+          11770.0
+        ],
+        "peak_alloc_mb": 9613.41064453125,
+        "peak_reserved_mb": 12622.0,
+        "dedicated_max_mb": 11355.7109375,
+        "nonlocal_max_mb": 1486.0,
+        "psnr": Infinity,
+        "max_abs_diff": 0,
+        "pct_px_diff": 0.0
+      },
+      "8 official + vae.enable_tiling()": {
+        "ms": 5446.7012000022805,
+        "runs": [
+          5446.7
+        ],
+        "peak_alloc_mb": 10695.228515625,
+        "peak_reserved_mb": 10994.0,
+        "dedicated_max_mb": 11132.94921875,
+        "nonlocal_max_mb": 78.0,
+        "psnr": 24.666191776271724,
+        "max_abs_diff": 182,
+        "pct_px_diff": 99.96672453703704
+      }
+    },
+    "scales": {
+      "1.5": {
+        "official": null,
+        "optimized": {
+          "ms": 14159.371050000118,
+          "runs": [
+            14092.2,
+            14226.6
+          ],
+          "peak_alloc_mb": 9613.41064453125,
+          "peak_reserved_mb": 12622.0,
+          "dedicated_max_mb": 11170.07421875,
+          "nonlocal_max_mb": 1992.0
+        },
+        "output_size": [
+          1008,
+          1440
+        ],
+        "psnr_vs_official15": 36.15163774180343,
+        "deltaE_vs_official15_at_1x": 2.352689007923125,
+        "sharpness_at_1x": 908.5719812202024,
+        "hint_err": [
+          25.367309306856463,
+          55.906149969123405,
+          170.79914754078598
+        ],
+        "line_darkness": 84.59971035481536
+      },
+      "1.25": {
+        "official": {
+          "ms": 2793.7231500000053,
+          "runs": [
+            2776.7,
+            2810.8
+          ],
+          "peak_alloc_mb": 9664.12109375,
+          "peak_reserved_mb": 10584.0,
+          "dedicated_max_mb": 10531.31640625,
+          "nonlocal_max_mb": 334.0
+        },
+        "optimized": {
+          "ms": 2653.6842999994406,
+          "runs": [
+            2629.0,
+            2678.3
+          ],
+          "peak_alloc_mb": 8206.181640625,
+          "peak_reserved_mb": 10486.0,
+          "dedicated_max_mb": 10561.06640625,
+          "nonlocal_max_mb": 206.0
+        },
+        "output_size": [
+          840,
+          1200
+        ],
+        "psnr_vs_official15": 34.158484968340105,
+        "deltaE_vs_official15_at_1x": 2.83320832178367,
+        "sharpness_at_1x": 948.6654212181776,
+        "hint_err": [
+          26.53914414360418,
+          56.845709802063254,
+          170.5988481650426
+        ],
+        "line_darkness": 83.8754887762491
+      },
+      "1.0": {
+        "official": {
+          "ms": 1787.9924999997456,
+          "runs": [
+            1788.9,
+            1787.0
+          ],
+          "peak_alloc_mb": 7989.90966796875,
+          "peak_reserved_mb": 8492.0,
+          "dedicated_max_mb": 8630.92578125,
+          "nonlocal_max_mb": 78.0
+        },
+        "optimized": {
+          "ms": 1655.7221500006563,
+          "runs": [
+            1664.8,
+            1646.6
+          ],
+          "peak_alloc_mb": 7056.8330078125,
+          "peak_reserved_mb": 8432.0,
+          "dedicated_max_mb": 8570.92578125,
+          "nonlocal_max_mb": 78.0
+        },
+        "output_size": [
+          672,
+          960
+        ],
+        "psnr_vs_official15": 31.785964056217498,
+        "deltaE_vs_official15_at_1x": 3.9497768343499624,
+        "sharpness_at_1x": 1843.0870405007709,
+        "hint_err": [
+          28.627430908396917,
+          55.63706938714722,
+          170.8912948953823
+        ],
+        "line_darkness": 78.47237509051412
+      },
+      "0.875": {
+        "official": null,
+        "optimized": {
+          "ms": 1274.3447499997274,
+          "runs": [
+            1279.6,
+            1269.1
+          ],
+          "peak_alloc_mb": 6766.72705078125,
+          "peak_reserved_mb": 7356.0,
+          "dedicated_max_mb": 7494.91796875,
+          "nonlocal_max_mb": 78.0
+        },
+        "output_size": [
+          592,
+          840
+        ],
+        "psnr_vs_official15": 30.567965062598855,
+        "deltaE_vs_official15_at_1x": 3.987533905636288,
+        "sharpness_at_1x": 921.4416095196375,
+        "hint_err": [
+          28.424620140845633,
+          56.757332080296436,
+          171.3560213783632
+        ],
+        "line_darkness": 82.36984069514844
+      },
+      "no_postprocess": {
+        "output_size": [
+          672,
+          960
+        ],
+        "psnr_vs_official15": 32.46789776121298,
+        "deltaE_vs_official15_at_1x": 2.5847435444429867,
+        "sharpness_at_1x": 1880.0605595136694,
+        "hint_err": [
+          23.095612199213193,
+          53.87811369428134,
+          167.2222918493746
+        ],
+        "line_darkness": 82.36390296886314
+      },
+      "official_1.5": {
+        "sharpness_at_1x": 857.1647235128737,
+        "hint_err": [
+          23.70296470673388,
+          53.22886560682148,
+          167.31506423210715
+        ],
+        "line_darkness": 83.31390296886315
+      }
+    },
+    "retrieval": {
+      "n_query": 4,
+      "n_ref_patches": 15,
+      "clip_preprocess_ms": 140.2353999983461,
+      "topk_equals_argsort": true,
+      "official_pipeline_topk": [
+        [
+          1,
+          12,
+          11
+        ],
+        [
+          2,
+          12,
+          1
+        ],
+        [
+          4,
+          0,
+          13
+        ],
+        [
+          4,
+          0,
+          14
+        ]
+      ],
+      "fp32": {
+        "ms": 1174.176800001078
+      },
+      "fp16": {
+        "ms": 404.86820000114676,
+        "topk_identical": true,
+        "topk_same_set": true,
+        "full_ranking_identical": true,
+        "max_abs_sim_diff": 0.00040090084075927734
+      },
+      "bf16": {
+        "ms": 394.9208499998349,
+        "topk_identical": true,
+        "topk_same_set": true,
+        "full_ranking_identical": false,
+        "max_abs_sim_diff": 0.004092693328857422
+      },
+      "fp16_gpu_to_cpu_ms": 428.03900000217254,
+      "fp16_cpu_to_gpu_ms": 201.702700000169
+    },
+    "line_extraction": {
+      "fp32_ms": 315.8688000003167,
+      "fp16": {
+        "ms": 162.54599999956554,
+        "psnr": 60.717835413614054,
+        "max_abs_diff": 3,
+        "pct_px_diff": 99.89583333333333
+      },
+      "bf16": {
+        "ms": 167.3355500006437,
+        "psnr": 48.167017474377936,
+        "max_abs_diff": 31,
+        "pct_px_diff": 100.0
+      }
+    }
+  }
+}

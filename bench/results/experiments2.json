@@ -1,0 +1,159 @@
+{
+  "vram_budget_fraction": 0.832472024415056,
+  "shadow_ex0": {
+    "postprocess": {
+      "official algorithm (budget, CLIP fp16)": {
+        "ms": 6760.483000001841,
+        "runs": [
+          6330.8,
+          6775.6,
+          6760.5
+        ],
+        "peak_alloc_mb": 9237.73974609375,
+        "peak_reserved_mb": 10118.0,
+        "dedicated_max_mb": 10246.92578125,
+        "nonlocal_max_mb": 78.0
+      },
+      "lean (bit-exact path)": {
+        "ms": 6542.121900001803,
+        "runs": [
+          6444.4,
+          6597.3,
+          6542.1
+        ],
+        "peak_alloc_mb": 7667.8515625,
+        "peak_reserved_mb": 9772.0,
+        "dedicated_max_mb": 9900.92578125,
+        "nonlocal_max_mb": 78.0,
+        "psnr": Infinity,
+        "max_abs_diff": 0,
+        "pct_px_diff": 0.0
+      },
+      "official run-to-run": {
+        "psnr": Infinity,
+        "max_abs_diff": 0,
+        "pct_px_diff": 0.0
+      }
+    },
+    "scales": {
+      "1.5": {
+        "ms": 6471.723499998916,
+        "runs": [
+          6432.9,
+          6548.0,
+          6471.7
+        ],
+        "peak_alloc_mb": 7667.8515625,
+        "peak_reserved_mb": 9772.0,
+        "dedicated_max_mb": 9900.92578125,
+        "nonlocal_max_mb": 78.0,
+        "output_size": [
+          1008,
+          1440
+        ],
+        "psnr_vs_official15": Infinity,
+        "deltaE_vs_official15_at_1x": 0.0,
+        "sharpness_at_1x": 1749.2358863764605,
+        "hint_err": [
+          197.75597506633895,
+          67.40026766670121
+        ],
+        "line_darkness": 45.243058634712945
+      },
+      "1.25": {
+        "ms": 2648.6335000008694,
+        "runs": [
+          2648.6,
+          2603.5,
+          2657.3
+        ],
+        "peak_alloc_mb": 6970.3046875,
+        "peak_reserved_mb": 8770.0,
+        "dedicated_max_mb": 8898.9140625,
+        "nonlocal_max_mb": 78.0,
+        "output_size": [
+          840,
+          1200
+        ],
+        "psnr_vs_official15": 36.35804000774526,
+        "deltaE_vs_official15_at_1x": 1.4443454688327015,
+        "sharpness_at_1x": 1721.9578082122282,
+        "hint_err": [
+          198.43735301575512,
+          67.19101167239965
+        ],
+        "line_darkness": 45.24522122329067
+      },
+      "1.0": {
+        "ms": 1660.4590000024473,
+        "runs": [
+          1660.5,
+          1646.9,
+          1666.7
+        ],
+        "peak_alloc_mb": 5821.24365234375,
+        "peak_reserved_mb": 6764.0,
+        "dedicated_max_mb": 6892.8984375,
+        "nonlocal_max_mb": 78.0,
+        "output_size": [
+          672,
+          960
+        ],
+        "psnr_vs_official15": 34.42152899040333,
+        "deltaE_vs_official15_at_1x": 2.462619622568866,
+        "sharpness_at_1x": 2957.4725627411854,
+        "hint_err": [
+          197.91759174759818,
+          68.62104082759672
+        ],
+        "line_darkness": 44.5496511295785
+      },
+      "0.875": {
+        "ms": 1254.0436999988742,
+        "runs": [
+          1253.1,
+          1254.0,
+          1258.4
+        ],
+        "peak_alloc_mb": 5349.15625,
+        "peak_reserved_mb": 6152.0,
+        "dedicated_max_mb": 6280.89453125,
+        "nonlocal_max_mb": 78.0,
+        "output_size": [
+          592,
+          840
+        ],
+        "psnr_vs_official15": 31.356606704792046,
+        "deltaE_vs_official15_at_1x": 2.462399784666155,
+        "sharpness_at_1x": 1422.823625613686,
+        "hint_err": [
+          198.38299729032124,
+          69.54187265239521
+        ],
+        "line_darkness": 45.633872393672725
+      },
+      "no_postprocess": {
+        "output_size": [
+          672,
+          960
+        ],
+        "psnr_vs_official15": 26.070284283337127,
+        "deltaE_vs_official15_at_1x": 3.971854718009875,
+        "sharpness_at_1x": 3698.3119792702755,
+        "hint_err": [
+          197.04184882556962,
+          67.00033250413063
+        ],
+        "line_darkness": 47.0001142499626
+      },
+      "official_1.5": {
+        "sharpness_at_1x": 1749.2358863764605,
+        "hint_err": [
+          197.75597506633895,
+          67.40026766670121
+        ],
+        "line_darkness": 45.243058634712945
+      }
+    }
+  }
+}

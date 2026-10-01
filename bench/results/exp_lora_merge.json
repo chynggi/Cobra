@@ -1,0 +1,14 @@
+{
+  "shadow_ex0": {
+    "lora_layers": 291,
+    "unmerged_ms": 11438.116199999058,
+    "merged_ms": 10585.54059999733,
+    "psnr_merged_vs_unmerged": 57.221407404221296
+  },
+  "line_ex0": {
+    "lora_layers": 291,
+    "unmerged_ms": 11309.703199996875,
+    "merged_ms": 10557.057900001382,
+    "psnr_merged_vs_unmerged": 58.32999172980382
+  }
+}

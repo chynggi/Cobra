@@ -1,0 +1,138 @@
+{
+  "impl": "app_optimized",
+  "args": {
+    "impl": "app_optimized",
+    "repeats": 1,
+    "cases": "shadow_ex0,line_ex2",
+    "top_k": 20,
+    "steps": 10,
+    "steps_sweep": false,
+    "postprocess_scale": 1.5,
+    "no_postprocess": false,
+    "no_profile": true,
+    "no_release_cache": false,
+    "tag": null
+  },
+  "model_load_s": 20.898165899998276,
+  "after_load_mem": {
+    "alloc_mb": 3592.1240234375,
+    "reserved_mb": 3890.0,
+    "peak_alloc_mb": 3592.1240234375,
+    "peak_reserved_mb": 3890.0
+  },
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "torch": "2.5.1+cu124",
+  "cases": {
+    "shadow_ex0": {
+      "style": "line + shadow",
+      "seed": 1,
+      "top_k": 20,
+      "line_extraction_ms": 689.6856000021216,
+      "resolution": [
+        672,
+        960
+      ],
+      "hints": [
+        [
+          [
+            336,
+            288
+          ],
+          [
+            248,
+            233,
+            214
+          ]
+        ],
+        [
+          [
+            302,
+            672
+          ],
+          [
+            235,
+            134,
+            45
+          ]
+        ]
+      ],
+      "first_run_ms": 92453.6356000026,
+      "e2e_total_ms": 87851.10669999995,
+      "e2e_runs_ms": [
+        87851.10669999995
+      ],
+      "e2e_mem": {
+        "alloc_mb": 2394.05859375,
+        "reserved_mb": 10222.0,
+        "peak_alloc_mb": 11794.54150390625,
+        "peak_reserved_mb": 14494.0
+      },
+      "e2e_wddm": [
+        {
+          "dedicated_max_mb": 11333.39453125,
+          "nonlocal_max_mb": 3374.0
+        }
+      ],
+      "output_size": [
+        1008,
+        1440
+      ]
+    },
+    "line_ex2": {
+      "style": "line",
+      "seed": 1,
+      "top_k": 20,
+      "change_ckpt_s": 0.8371389999956591,
+      "line_extraction_ms": 497.74299999990035,
+      "resolution": [
+        672,
+        960
+      ],
+      "hints": [
+        [
+          [
+            336,
+            288
+          ],
+          [
+            248,
+            233,
+            214
+          ]
+        ],
+        [
+          [
+            302,
+            672
+          ],
+          [
+            235,
+            134,
+            45
+          ]
+        ]
+      ],
+      "first_run_ms": 103678.98829999467,
+      "e2e_total_ms": 78775.60339999764,
+      "e2e_runs_ms": [
+        78775.60339999764
+      ],
+      "e2e_mem": {
+        "alloc_mb": 2400.27734375,
+        "reserved_mb": 9900.0,
+        "peak_alloc_mb": 11798.38720703125,
+        "peak_reserved_mb": 14632.0
+      },
+      "e2e_wddm": [
+        {
+          "dedicated_max_mb": 11407.5234375,
+          "nonlocal_max_mb": 3438.0
+        }
+      ],
+      "output_size": [
+        1008,
+        1440
+      ]
+    }
+  }
+}

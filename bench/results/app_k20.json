@@ -1,0 +1,82 @@
+{
+  "impl": "app",
+  "args": {
+    "impl": "app",
+    "repeats": 1,
+    "cases": "shadow_ex0,line_ex2",
+    "top_k": 20,
+    "steps": 10,
+    "steps_sweep": false,
+    "postprocess_scale": 1.5,
+    "no_postprocess": false,
+    "no_profile": true,
+    "no_cache": false,
+    "tag": null
+  },
+  "model_load_s": 21.871026900000288,
+  "after_load_mem": {
+    "alloc_mb": 4869.2431640625,
+    "reserved_mb": 5100.0,
+    "peak_alloc_mb": 4869.2431640625,
+    "peak_reserved_mb": 5100.0
+  },
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "torch": "2.5.1+cu124",
+  "cases": {
+    "shadow_ex0": {
+      "style": "line + shadow",
+      "seed": 1,
+      "top_k": 20,
+      "line_extraction_ms": 812.1503999973356,
+      "resolution": [
+        672,
+        960
+      ],
+      "hints": [
+        [
+          [
+            336,
+            288
+          ],
+          [
+            248,
+            233,
+            214
+          ]
+        ],
+        [
+          [
+            302,
+            672
+          ],
+          [
+            235,
+            134,
+            45
+          ]
+        ]
+      ],
+      "first_run_ms": 736098.6295999973,
+      "e2e_total_ms": 779754.4285999974,
+      "e2e_runs_ms": [
+        779754.4285999974
+      ],
+      "e2e_mem": {
+        "alloc_mb": 4877.52294921875,
+        "reserved_mb": 12540.0,
+        "peak_alloc_mb": 23947.5791015625,
+        "peak_reserved_mb": 32320.0
+      },
+      "e2e_wddm": [
+        {
+          "dedicated_max_mb": 11258.5703125,
+          "nonlocal_max_mb": 22828.0
+        }
+      ],
+      "output_size": [
+        1008,
+        1440
+      ]
+    }
+  }
+}

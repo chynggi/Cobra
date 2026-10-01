@@ -1,0 +1,49 @@
+torch_npu not found
+torch_npu not found
+torch_npu not found
+Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]Fetching 11 files: 100%|##########| 11/11 [00:00<00:00, 11003.42it/s]
+./Cobra/models--JunhaoZhuang--Cobra\snapshots\ed677418ceb4fada6d1a369139bd7e8a3a13433d
+D:\Cobra\app.py:163: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  line_model.load_state_dict(torch.load(line_model_path))
+D:\Cobra\app.py:186: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  MultiResNetModel.load_state_dict(torch.load(os.path.join(model_global_path, 'shadow_GSRP', 'MultiResNetModel.bin'), map_location='cpu'), strict=True)
+Some weights of the model checkpoint were not used when initializing PixArtTransformer2DModel: 
+ ['caption_projection.y_embedding']
+loaded causal_dit
+D:\Cobra\app.py:269: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  lora_state_dict = torch.load(os.path.join(model_global_path, 'shadow_ckpt', 'transformer_lora_pos.bin'), map_location='cpu')
+D:\Cobra\app.py:271: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  controlnet_state_dict = torch.load(os.path.join(model_global_path, 'shadow_ckpt', 'controlnet.bin'), map_location='cpu')
+Keyword arguments {'safety_checker': None} are not expected by CobraPixArtAlphaPipeline and will be ignored.
+Loading pipeline components...:   0%|          | 0/3 [00:00<?, ?it/s]Loading pipeline components...: 100%|##########| 3/3 [00:00<00:00,  6.35it/s]Loading pipeline components...: 100%|##########| 3/3 [00:00<00:00,  6.35it/s]
+total import/load: 27.6 s
+  12.58 s       1 calls  D:\Cobra\app.py:177(load_ckpt)
+   5.72 s       1 calls  D:\Cobra\.venv\Lib\site-packages\gradio\__init__.py:1(<module>)
+   5.29 s    1466 calls  D:\Cobra\.venv\Lib\site-packages\torch\nn\modules\linear.py:93(__init__)
+   5.14 s       1 calls  D:\Cobra\.venv\Lib\site-packages\gradio\_simple_templates\__init__.py:1(<module>)
+   5.05 s       1 calls  D:\Cobra\.venv\Lib\site-packages\gradio\components\__init__.py:1(<module>)
+   3.25 s   13708 calls  D:\Cobra\.venv\Lib\site-packages\torch\nn\modules\module.py:897(_apply)
+   3.20 s       1 calls  D:\Cobra\diffusers\src\diffusers\models\transformers\causal_sparse_dit.py:141(__init__)
+   3.05 s      28 calls  D:\Cobra\diffusers\src\diffusers\models\attention.py:1655(__init__)
+   2.21 s      70 calls  D:\Cobra\diffusers\src\diffusers\models\attention.py:1158(__init__)
+   2.10 s       1 calls  D:\Cobra\diffusers\src\diffusers\loaders\peft.py:112(add_adapter)
+   2.07 s    3497 calls  yng\AppData\Roaming\uv\python\cpython-3.11.11-windows-x86_64-none\Lib\importlib\__init__.py:108(import_module)
+   2.06 s       1 calls  D:\Cobra\.venv\Lib\site-packages\peft\tuners\lora\model.py:141(__init__)
+   2.06 s       1 calls  D:\Cobra\.venv\Lib\site-packages\peft\tuners\tuners_utils.py:150(__init__)
+   1.74 s     290 calls  D:\Cobra\.venv\Lib\site-packages\peft\tuners\lora\layer.py:523(__init__)
+   1.48 s       1 calls  D:\Cobra\.venv\Lib\site-packages\torchvision\__init__.py:1(<module>)
+   1.42 s       1 calls  D:\Cobra\.venv\Lib\site-packages\peft\__init__.py:1(<module>)
+   1.30 s       1 calls  D:\Cobra\diffusers\src\diffusers\models\transformers\causal_sparse_dit_control.py:118(__init__)
+   1.27 s     100 calls  D:\Cobra\diffusers\src\diffusers\models\attention_processor.py:96(__init__)
+   1.24 s      42 calls  D:\Cobra\diffusers\src\diffusers\models\attention.py:248(__init__)
+   1.17 s       1 calls  D:\Cobra\cobra_utils\utils.py:584(init_causal_dit)
+   1.15 s       2 calls  D:\Cobra\diffusers\src\diffusers\models\modeling_utils.py:406(from_pretrained)
+   1.11 s      70 calls  D:\Cobra\diffusers\src\diffusers\models\activations.py:76(__init__)
+   0.98 s       1 calls  D:\Cobra\.venv\Lib\site-packages\torchvision\models\__init__.py:1(<module>)
+   0.97 s     224 calls  D:\Cobra\.venv\Lib\site-packages\torch\nn\modules\conv.py:502(__init__)
+   0.96 s       1 calls  D:\Cobra\diffusers\src\diffusers\pipelines\pipeline_utils.py:494(from_pretrained)
+   0.96 s     224 calls  D:\Cobra\.venv\Lib\site-packages\torch\nn\modules\conv.py:86(__init__)
+   0.90 s       1 calls  D:\Cobra\.venv\Lib\site-packages\transformers\models\__init__.py:1(<module>)
+   0.87 s       1 calls  D:\Cobra\.venv\Lib\site-packages\torchvision\ops\__init__.py:1(<module>)
+   0.78 s      28 calls  D:\Cobra\diffusers\src\diffusers\models\attention_processor.py:5190(__init__)
+   0.75 s       1 calls  D:\Cobra\.venv\Lib\site-packages\gradio_client\__init__.py:1(<module>)

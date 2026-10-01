@@ -1,0 +1,16 @@
+torch_npu not found
+torch_npu not found
+Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]Fetching 11 files: 100%|##########| 11/11 [00:00<?, ?it/s]
+1. pil_to_normalized_tensor bit-exact: True
+2. tensor_to_pil bit-exact: True max diff 0
+D:\Cobra\diffusers\src\diffusers\models\resnet.py:323: FutureWarning: `scale` is deprecated and will be removed in version 1.0.0. The `scale` argument is deprecated and will be ignored. Please remove it, as passing it will raise an error in the future. `scale` should directly be passed while calling the underlying pipeline component i.e., via `cross_attention_kwargs`.
+  deprecate("scale", "1.0.0", deprecation_message)
+D:\Cobra\diffusers\src\diffusers\models\downsampling.py:135: FutureWarning: `scale` is deprecated and will be removed in version 1.0.0. The `scale` argument is deprecated and will be ignored. Please remove it, as passing it will raise an error in the future. `scale` should directly be passed while calling the underlying pipeline component i.e., via `cross_attention_kwargs`.
+  deprecate("scale", "1.0.0", deprecation_message)
+3. encode_skip_features bit-exact: True [(1, 128, 1440, 1008), (1, 128, 720, 504), (1, 256, 360, 252), (1, 512, 180, 126), (1, 512, 180, 126)]
+D:\Cobra\bench\test_equivalence.py:70: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  m.load_state_dict(torch.load(os.path.join(model_path, style, "MultiResNetModel.bin"), map_location="cpu"), strict=True)
+4. line_GSRP LeanMultiHiddenResNetModel bit-exact vs official (training-mode BN): True
+4. shadow_GSRP LeanMultiHiddenResNetModel bit-exact vs official (training-mode BN): True
+5. decode_with_skip_features bit-exact: True
+ALL OK

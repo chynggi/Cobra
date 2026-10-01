@@ -1,0 +1,299 @@
+{
+  "impl": "app_optimized",
+  "args": {
+    "impl": "app_optimized",
+    "repeats": 3,
+    "cases": "line_ex0,line_ex2,shadow_ex0,shadow_ex2",
+    "top_k": 3,
+    "steps": 10,
+    "steps_sweep": false,
+    "postprocess_scale": 1.5,
+    "no_postprocess": true,
+    "no_profile": true,
+    "no_release_cache": false,
+    "tag": null
+  },
+  "model_load_s": 21.036727400001837,
+  "after_load_mem": {
+    "alloc_mb": 3592.1240234375,
+    "reserved_mb": 3890.0,
+    "peak_alloc_mb": 3592.1240234375,
+    "peak_reserved_mb": 3890.0
+  },
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "torch": "2.5.1+cu124",
+  "cases": {
+    "shadow_ex0": {
+      "style": "line + shadow",
+      "seed": 1,
+      "top_k": 3,
+      "line_extraction_ms": 354.70989999885205,
+      "resolution": [
+        672,
+        960
+      ],
+      "hints": [
+        [
+          [
+            336,
+            288
+          ],
+          [
+            248,
+            233,
+            214
+          ]
+        ],
+        [
+          [
+            302,
+            672
+          ],
+          [
+            235,
+            134,
+            45
+          ]
+        ]
+      ],
+      "first_run_ms": 10742.621999997937,
+      "e2e_total_ms": 10307.300599997689,
+      "e2e_runs_ms": [
+        10326.495300003444,
+        10307.300599997689,
+        10283.535200003826
+      ],
+      "e2e_mem": {
+        "alloc_mb": 3600.40380859375,
+        "reserved_mb": 8366.0,
+        "peak_alloc_mb": 6475.5732421875,
+        "peak_reserved_mb": 8366.0
+      },
+      "e2e_wddm": [
+        {
+          "dedicated_max_mb": 8678.91015625,
+          "nonlocal_max_mb": 78.0
+        },
+        {
+          "dedicated_max_mb": 8494.91015625,
+          "nonlocal_max_mb": 78.0
+        },
+        {
+          "dedicated_max_mb": 8494.91015625,
+          "nonlocal_max_mb": 78.0
+        }
+      ],
+      "output_size": [
+        672,
+        960
+      ]
+    },
+    "shadow_ex2": {
+      "style": "line + shadow",
+      "seed": 4,
+      "top_k": 3,
+      "line_extraction_ms": 302.6222000044072,
+      "resolution": [
+        800,
+        800
+      ],
+      "hints": [
+        [
+          [
+            400,
+            280
+          ],
+          [
+            250,
+            204,
+            159
+          ]
+        ],
+        [
+          [
+            320,
+            560
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ]
+      ],
+      "first_run_ms": 9806.3786000057,
+      "e2e_total_ms": 9835.487500000454,
+      "e2e_runs_ms": [
+        9839.394399998127,
+        9815.907899996091,
+        9835.487500000454
+      ],
+      "e2e_mem": {
+        "alloc_mb": 3600.40283203125,
+        "reserved_mb": 8314.0,
+        "peak_alloc_mb": 6445.904296875,
+        "peak_reserved_mb": 8314.0
+      },
+      "e2e_wddm": [
+        {
+          "dedicated_max_mb": 8442.91015625,
+          "nonlocal_max_mb": 78.0
+        },
+        {
+          "dedicated_max_mb": 8442.91015625,
+          "nonlocal_max_mb": 78.0
+        },
+        {
+          "dedicated_max_mb": 8442.91015625,
+          "nonlocal_max_mb": 78.0
+        }
+      ],
+      "output_size": [
+        800,
+        800
+      ]
+    },
+    "line_ex0": {
+      "style": "line",
+      "seed": 0,
+      "top_k": 3,
+      "change_ckpt_s": 0.8521829000019352,
+      "line_extraction_ms": 305.5716000017128,
+      "resolution": [
+        672,
+        960
+      ],
+      "hints": [
+        [
+          [
+            336,
+            288
+          ],
+          [
+            215,
+            186,
+            149
+          ]
+        ],
+        [
+          [
+            268,
+            624
+          ],
+          [
+            182,
+            169,
+            133
+          ]
+        ],
+        [
+          [
+            416,
+            144
+          ],
+          [
+            75,
+            109,
+            80
+          ]
+        ]
+      ],
+      "first_run_ms": 10219.022299999779,
+      "e2e_total_ms": 10164.395100000547,
+      "e2e_runs_ms": [
+        10164.395100000547,
+        10155.671799999254,
+        10172.074200003408
+      ],
+      "e2e_mem": {
+        "alloc_mb": 3600.43505859375,
+        "reserved_mb": 8350.0,
+        "peak_alloc_mb": 6474.0732421875,
+        "peak_reserved_mb": 8350.0
+      },
+      "e2e_wddm": [
+        {
+          "dedicated_max_mb": 8612.91015625,
+          "nonlocal_max_mb": 78.0
+        },
+        {
+          "dedicated_max_mb": 8478.91015625,
+          "nonlocal_max_mb": 78.0
+        },
+        {
+          "dedicated_max_mb": 8478.91015625,
+          "nonlocal_max_mb": 78.0
+        }
+      ],
+      "output_size": [
+        672,
+        960
+      ]
+    },
+    "line_ex2": {
+      "style": "line",
+      "seed": 1,
+      "top_k": 3,
+      "line_extraction_ms": 286.01289999642177,
+      "resolution": [
+        672,
+        960
+      ],
+      "hints": [
+        [
+          [
+            336,
+            288
+          ],
+          [
+            248,
+            233,
+            214
+          ]
+        ],
+        [
+          [
+            302,
+            672
+          ],
+          [
+            235,
+            134,
+            45
+          ]
+        ]
+      ],
+      "first_run_ms": 10225.075100002869,
+      "e2e_total_ms": 10275.656300000264,
+      "e2e_runs_ms": [
+        10318.354700000782,
+        10275.656300000264,
+        10264.322799994261
+      ],
+      "e2e_mem": {
+        "alloc_mb": 3600.43505859375,
+        "reserved_mb": 8350.0,
+        "peak_alloc_mb": 6475.2080078125,
+        "peak_reserved_mb": 8350.0
+      },
+      "e2e_wddm": [
+        {
+          "dedicated_max_mb": 8682.91015625,
+          "nonlocal_max_mb": 78.0
+        },
+        {
+          "dedicated_max_mb": 8478.91015625,
+          "nonlocal_max_mb": 78.0
+        },
+        {
+          "dedicated_max_mb": 8478.91015625,
+          "nonlocal_max_mb": 78.0
+        }
+      ],
+      "output_size": [
+        672,
+        960
+      ]
+    }
+  }
+}

@@ -1,0 +1,102 @@
+torch_npu not found
+torch_npu not found
+torch_npu not found
+Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]Fetching 11 files: 100%|##########| 11/11 [00:00<?, ?it/s]
+./Cobra/models--JunhaoZhuang--Cobra\snapshots\ed677418ceb4fada6d1a369139bd7e8a3a13433d
+D:\Cobra\app_optimized.py:176: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  line_model.load_state_dict(torch.load(line_model_path))
+D:\Cobra\app_optimized.py:219: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  MultiResNetModel.load_state_dict(torch.load(os.path.join(model_global_path, 'shadow_GSRP', 'MultiResNetModel.bin'), map_location='cpu'), strict=True)
+Some weights of the model checkpoint were not used when initializing PixArtTransformer2DModel: 
+ ['caption_projection.y_embedding']
+loaded causal_dit
+D:\Cobra\app_optimized.py:302: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  lora_state_dict = torch.load(os.path.join(model_global_path, 'shadow_ckpt', 'transformer_lora_pos.bin'), map_location='cpu')
+D:\Cobra\app_optimized.py:304: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  controlnet_state_dict = torch.load(os.path.join(model_global_path, 'shadow_ckpt', 'controlnet.bin'), map_location='cpu')
+Keyword arguments {'safety_checker': None} are not expected by CobraPixArtAlphaPipeline and will be ignored.
+Loading pipeline components...:   0%|          | 0/3 [00:00<?, ?it/s]Loading pipeline components...:  33%|###3      | 1/3 [00:00<00:01,  1.67it/s]Loading pipeline components...: 100%|##########| 3/3 [00:00<00:00,  4.84it/s]
+VRAM budget for PyTorch: 9.99 GB
+line + shadow sketch
+num_ref_list [3, 3, 3, 3]
+D:\Cobra\diffusers\src\diffusers\pipelines\cobra\pipeline_cobra_pixart.py:596: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  prompt_embeds = torch.load('./prompt_tensor/prompt_embeds.pt').unsqueeze(0).repeat(batch_size * num_images_per_prompt, 1, 1)
+D:\Cobra\diffusers\src\diffusers\pipelines\cobra\pipeline_cobra_pixart.py:598: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  prompt_attention_mask = torch.load('./prompt_tensor/prompt_attention_mask.pt').unsqueeze(0).repeat(batch_size * num_images_per_prompt,1)
+D:\Cobra\diffusers\src\diffusers\models\resnet.py:323: FutureWarning: `scale` is deprecated and will be removed in version 1.0.0. The `scale` argument is deprecated and will be ignored. Please remove it, as passing it will raise an error in the future. `scale` should directly be passed while calling the underlying pipeline component i.e., via `cross_attention_kwargs`.
+  deprecate("scale", "1.0.0", deprecation_message)
+D:\Cobra\diffusers\src\diffusers\models\downsampling.py:135: FutureWarning: `scale` is deprecated and will be removed in version 1.0.0. The `scale` argument is deprecated and will be ignored. Please remove it, as passing it will raise an error in the future. `scale` should directly be passed while calling the underlying pipeline component i.e., via `cross_attention_kwargs`.
+  deprecate("scale", "1.0.0", deprecation_message)
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|#         | 1/10 [00:01<00:16,  1.80s/it] 20%|##        | 2/10 [00:02<00:08,  1.06s/it] 30%|###       | 3/10 [00:03<00:06,  1.08it/s] 40%|####      | 4/10 [00:03<00:05,  1.16it/s] 50%|#####     | 5/10 [00:04<00:04,  1.22it/s] 60%|######    | 6/10 [00:05<00:03,  1.25it/s] 70%|#######   | 7/10 [00:06<00:02,  1.28it/s] 80%|########  | 8/10 [00:06<00:01,  1.29it/s] 90%|######### | 9/10 [00:07<00:00,  1.28it/s]100%|##########| 10/10 [00:08<00:00,  1.28it/s]100%|##########| 10/10 [00:08<00:00,  1.18it/s]
+shadow_ex0 {'official algorithm (budget, CLIP fp16)': {'ms': 6760.483000001841, 'runs': [6330.8, 6775.6, 6760.5], 'peak_alloc_mb': 9237.73974609375, 'peak_reserved_mb': 10118.0, 'dedicated_max_mb': 10246.92578125, 'nonlocal_max_mb': 78.0}, 'lean (bit-exact path)': {'ms': 6542.121900001803, 'runs': [6444.4, 6597.3, 6542.1], 'peak_alloc_mb': 7667.8515625, 'peak_reserved_mb': 9772.0, 'dedicated_max_mb': 9900.92578125, 'nonlocal_max_mb': 78.0, 'psnr': inf, 'max_abs_diff': 0, 'pct_px_diff': 0.0}, 'official run-to-run': {'psnr': inf, 'max_abs_diff': 0, 'pct_px_diff': 0.0}}
+shadow_ex0 scale 1.5 {'ms': 6471.723499998916, 'runs': [6432.9, 6548.0, 6471.7], 'peak_alloc_mb': 7667.8515625, 'peak_reserved_mb': 9772.0, 'dedicated_max_mb': 9900.92578125, 'nonlocal_max_mb': 78.0, 'output_size': [1008, 1440], 'psnr_vs_official15': inf, 'deltaE_vs_official15_at_1x': 0.0, 'sharpness_at_1x': 1749.2358863764605, 'hint_err': [197.75597506633895, 67.40026766670121], 'line_darkness': 45.243058634712945}
+shadow_ex0 scale 1.25 {'ms': 2648.6335000008694, 'runs': [2648.6, 2603.5, 2657.3], 'peak_alloc_mb': 6970.3046875, 'peak_reserved_mb': 8770.0, 'dedicated_max_mb': 8898.9140625, 'nonlocal_max_mb': 78.0, 'output_size': [840, 1200], 'psnr_vs_official15': 36.35804000774526, 'deltaE_vs_official15_at_1x': 1.4443454688327015, 'sharpness_at_1x': 1721.9578082122282, 'hint_err': [198.43735301575512, 67.19101167239965], 'line_darkness': 45.24522122329067}
+shadow_ex0 scale 1.0 {'ms': 1660.4590000024473, 'runs': [1660.5, 1646.9, 1666.7], 'peak_alloc_mb': 5821.24365234375, 'peak_reserved_mb': 6764.0, 'dedicated_max_mb': 6892.8984375, 'nonlocal_max_mb': 78.0, 'output_size': [672, 960], 'psnr_vs_official15': 34.42152899040333, 'deltaE_vs_official15_at_1x': 2.462619622568866, 'sharpness_at_1x': 2957.4725627411854, 'hint_err': [197.91759174759818, 68.62104082759672], 'line_darkness': 44.5496511295785}
+shadow_ex0 scale 0.875 {'ms': 1254.0436999988742, 'runs': [1253.1, 1254.0, 1258.4], 'peak_alloc_mb': 5349.15625, 'peak_reserved_mb': 6152.0, 'dedicated_max_mb': 6280.89453125, 'nonlocal_max_mb': 78.0, 'output_size': [592, 840], 'psnr_vs_official15': 31.356606704792046, 'deltaE_vs_official15_at_1x': 2.462399784666155, 'sharpness_at_1x': 1422.823625613686, 'hint_err': [198.38299729032124, 69.54187265239521], 'line_darkness': 45.633872393672725}
+D:\Cobra\app_optimized.py:346: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  MultiResNetModel.load_state_dict(torch.load(MultiResNetModel_path, map_location='cpu'), strict=True)
+D:\Cobra\app_optimized.py:350: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  lora_state_dict = torch.load(causal_dit_lora_path, map_location='cpu')
+D:\Cobra\app_optimized.py:352: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  controlnet_state_dict = torch.load(controlnet_path, map_location='cpu')
+loaded line ckpt
+num_ref_list [3, 3, 3, 3]
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|#         | 1/10 [00:01<00:14,  1.58s/it] 20%|##        | 2/10 [00:02<00:07,  1.04it/s] 30%|###       | 3/10 [00:02<00:06,  1.16it/s] 40%|####      | 4/10 [00:03<00:04,  1.22it/s] 50%|#####     | 5/10 [00:04<00:03,  1.27it/s] 60%|######    | 6/10 [00:05<00:03,  1.28it/s] 70%|#######   | 7/10 [00:05<00:02,  1.30it/s] 80%|########  | 8/10 [00:06<00:01,  1.29it/s] 90%|######### | 9/10 [00:07<00:00,  1.31it/s]100%|##########| 10/10 [00:08<00:00,  1.32it/s]100%|##########| 10/10 [00:08<00:00,  1.23it/s]
+Traceback (most recent call last):
+  File "D:\Cobra\bench\run_experiments2.py", line 113, in <module>
+    main()
+  File "D:\Cobra\bench\run_experiments2.py", line 67, in main
+    t, off = timed(official(1.5), args.repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cobra\bench\run_experiments.py", line 42, in timed
+    torch.manual_seed(seed); fn()
+                             ^^^^
+  File "D:\Cobra\bench\run_experiments2.py", line 61, in <lambda>
+    return lambda: official_postprocess(shim, pp.NULL_TIMER, colorized, extracted_ori.resize(size))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cobra\bench\baseline_profiled.py", line 107, in official_postprocess
+    output = pipeline.vae._decode(h_color.sample(),return_dict = False, hidden_list = hidden_list)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cobra\diffusers\src\diffusers\models\autoencoders\autoencoder_kl.py", line 306, in _decode
+    dec = self.decoder(z, hidden_list = hidden_list)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cobra\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cobra\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cobra\diffusers\src\diffusers\models\autoencoders\vae.py", line 360, in forward
+    sample = up_block(sample, latent_embeds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cobra\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cobra\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cobra\diffusers\src\diffusers\models\unets\unet_2d_blocks.py", line 2907, in forward
+    hidden_states = upsampler(hidden_states)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cobra\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cobra\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cobra\diffusers\src\diffusers\models\upsampling.py", line 180, in forward
+    hidden_states = self.conv(hidden_states)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cobra\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cobra\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cobra\.venv\Lib\site-packages\torch\nn\modules\conv.py", line 554, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cobra\.venv\Lib\site-packages\torch\nn\modules\conv.py", line 549, in _conv_forward
+    return F.conv2d(
+           ^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 710.00 MiB. GPU 0 has a total capacity of 12.00 GiB of which 484.23 MiB is free. 9.99 GiB allowed; Of the allocated memory 8.32 GiB is allocated by PyTorch, and 1.41 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
